@@ -34,8 +34,8 @@ To trigger local variables, add the class `momentumcss` to your elemnt.
 
 <table>
 <tr><th style="width:14em">Property<th>Description
-<tr><td><pre><code>--elwidth</code></pre><td>Width of the element
-<tr><td><pre><code>--elheight</code></pre><td>Height of the element
-<tr><td><pre><code>--eltop</code></pre><td>Element offsetTop value
-<tr><td><pre><code>--elleft</code></pre><td>Element offsetLeft value
+<tr><td><pre><code>--width</code></pre><td>Width of the element
+<tr><td><pre><code>--height</code></pre><td>Height of the element
+<tr><td><pre><code>--top</code></pre><td>Element offsetTop value
+<tr><td><pre><code>--left</code></pre><td>Element offsetLeft value
 </table>

@@ -58,10 +58,10 @@ function momentumInit() {
     momentumRoot.setProperty('--viewportheight',window.innerHeight + 'px');
     for (let i = 0; i < momentumEls.length; i++) {
         const e = momentumEls[i];
-        e.style.setProperty('--elwidth',e.offsetWidth + 'px');
-        e.style.setProperty('--elheight',e.offsetHeight + 'px');
-        e.style.setProperty('--eltop',e.offsetTop + 'px');
-        e.style.setProperty('--elleft',e.offsetLeft + 'px');
+        e.style.setProperty('--width',e.offsetWidth + 'px');
+        e.style.setProperty('--height',e.offsetHeight + 'px');
+        e.style.setProperty('--top',e.offsetTop + 'px');
+        e.style.setProperty('--left',e.offsetLeft + 'px');
     }
 } momentumInit();
 window.addEventListener('resize',momentumInit);
