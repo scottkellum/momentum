@@ -4,7 +4,7 @@ Tracking scroll position, mouse position, device orientation, and more in CSS!
 
 ## Installation
 
-Add the js to the end of your `<body>` tag.
+Add [the js](https://raw.githubusercontent.com/scottkellum/momentum-css/master/momentum-css.js) to the end of your `<body>` tag.
 
 ## Usages
 
@@ -13,7 +13,7 @@ This library provides CSS variables you can use alongside transitions, transform
 ### Global variables
 
 <table>
-<tr><th>Property<th>Description
+<tr><th style="width:14em">Property<th>Description
 <tr><td>`--viewportwidth`<td>The width of the viewport
 <tr><td>`--viewportheight`<td>The height of the viewport
 <tr><td>`--scrollx`<td>Distance scrolled on the X axis
@@ -33,7 +33,7 @@ This library provides CSS variables you can use alongside transitions, transform
 To trigger local variables, add the class `momentumcss` to your elemnt.
 
 <table>
-<tr><th>Property<th>Description
+<tr><th style="width:14em">Property<th>Description
 <tr><td>`--elwidth`<td>Width of the element
 <tr><td>`--elheight`<td>Height of the element
 <tr><td>`--eltop`<td>Element offsetTop value
