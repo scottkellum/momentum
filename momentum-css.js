@@ -1,138 +1,60 @@
 var momentumRoot = document.body.style;
 var momentumEls = document.querySelectorAll('.momentumcss');
 
-CSS.registerProperty({
-    name: '--noiseinterval',
-    syntax: '<time>',
-    inherits: false,
-    initialValue: '0s'
-});
-var noiseInterval = cssTime(window.getComputedStyle(document.body).getPropertyValue('--noiseinterval'));
-
-
-// Write element specific properties first
-CSS.registerProperty({
-    name: '--viewportwidth',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--viewportheight',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--width',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--height',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--top',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--left',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--noise',
-    syntax: '<number>',
-    inherits: true,
-    initialValue: '0'
-});
+// Page and element location and dimentions
 function momentumInit() {
-    momentumRoot.setProperty('--viewportwidth',window.innerWidth + 'px');
-    momentumRoot.setProperty('--viewportheight',window.innerHeight + 'px');
+    momentumRoot.setProperty('--viewportwidth',window.innerWidth);
+    momentumRoot.setProperty('--viewportheight',window.innerHeight);
     for (let i = 0; i < momentumEls.length; i++) {
         const e = momentumEls[i];
-        e.style.setProperty('--width',e.offsetWidth + 'px');
-        e.style.setProperty('--height',e.offsetHeight + 'px');
-        e.style.setProperty('--top',e.offsetTop + 'px');
-        e.style.setProperty('--left',e.offsetLeft + 'px');
+        e.style.setProperty('--width',e.offsetWidth);
+        e.style.setProperty('--height',e.offsetHeight);
+        e.style.setProperty('--top',e.offsetTop);
+        e.style.setProperty('--left',e.offsetLeft);
     }
 } momentumInit();
 window.addEventListener('resize',momentumInit);
-if(noiseInterval > 0) {
-    window.setInterval(function(){
-        momentumRoot.setProperty('--noise',Math.random());
-    }, noiseInterval);  
-}
 
-
-// initialize for browsers that don’t support registering properties yet
-momentumRoot.setProperty('--scrollx',window.scrollX + 'px');
-momentumRoot.setProperty('--scrolly',window.scrollY + 'px');
-momentumRoot.setProperty('--clientx','0px');
-momentumRoot.setProperty('--clienty','0px');
+// Initialize variables
+momentumRoot.setProperty('--scrollx',window.scrollX);
+momentumRoot.setProperty('--scrolly',window.scrollY);
+momentumRoot.setProperty('--clientx','0');
+momentumRoot.setProperty('--clienty','0');
 momentumRoot.setProperty('--pointerdown',0);
 momentumRoot.setProperty('--touches',0);
-momentumRoot.setProperty('--orientalpha','0deg');
-momentumRoot.setProperty('--orientbeta','0deg');
-momentumRoot.setProperty('--orientgamma','0deg');
+momentumRoot.setProperty('--orientalpha','0');
+momentumRoot.setProperty('--orientbeta','0');
+momentumRoot.setProperty('--orientgamma','0');
+momentumRoot.setProperty('--random',Math.random());
 momentumRoot.setProperty('--noise',Math.random());
 
+// Noise
+window.setInterval(function(){
+    momentumRoot.setProperty('--noise',Math.random());
+}, 100);
+
+// Page events
+momentumRoot.setProperty('--ready',0);
+momentumRoot.setProperty('--loaded',0);
+document.addEventListener( 'DOMContentLoaded', function () {
+    momentumRoot.setProperty('--ready',1)
+}, false );
+window.onload = function(){
+    momentumRoot.setProperty('--loaded',1)
+};
 
 // Scroll events
-CSS.registerProperty({
-    name: '--scrollx',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--scrolly',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
 window.addEventListener('scroll',momentumScroll,false);
 function momentumScroll() {
-    momentumRoot.setProperty('--scrollx',window.scrollX + 'px');
-    momentumRoot.setProperty('--scrolly',window.scrollY + 'px');
+    momentumRoot.setProperty('--scrollx',window.scrollX);
+    momentumRoot.setProperty('--scrolly',window.scrollY);
 }
 
 // Pointer events
-CSS.registerProperty({
-    name: '--clientx',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--clienty',
-    syntax: '<length>',
-    inherits: true,
-    initialValue: '0px'
-});
-CSS.registerProperty({
-    name: '--pointerdown',
-    syntax: '<number>',
-    inherits: true,
-    initialValue: '0'
-});
-CSS.registerProperty({
-    name: '--touches',
-    syntax: '<number>',
-    inherits: true,
-    initialValue: '0'
-});
 window.addEventListener('pointermove',momentumPointer,false);
 function momentumPointer(e) {
-    momentumRoot.setProperty('--clientx',e.clientX + 'px');
-    momentumRoot.setProperty('--clienty',e.clientY + 'px');
+    momentumRoot.setProperty('--clientx',e.clientX);
+    momentumRoot.setProperty('--clienty',e.clientY);
 }
 window.addEventListener('pointerdown',momentumPointerDown,false);
 window.addEventListener('pointerup',momentumPointerUp,false);
@@ -145,15 +67,15 @@ function momentumPointerUp(e) {
 // Override pointer events if touch events
 window.addEventListener('touchmove',momentumTouch,false);
 function momentumTouch(e) {
-    momentumRoot.setProperty('--clientx',e.touches[0].clientX + 'px');
-    momentumRoot.setProperty('--clienty',e.touches[0].clientY + 'px');
+    momentumRoot.setProperty('--clientx',e.touches[0].clientX);
+    momentumRoot.setProperty('--clienty',e.touches[0].clientY);
 }
 window.addEventListener('touchstart',momentumTouchStart,false);
 window.addEventListener('touchend',momentumTouchEnd,false);
 function momentumTouchStart(e) {
     momentumRoot.setProperty('--pointerdown',0);
-    momentumRoot.setProperty('--clientx',e.touches[0].clientX + 'px');
-    momentumRoot.setProperty('--clienty',e.touches[0].clientY + 'px');
+    momentumRoot.setProperty('--clientx',e.touches[0].clientX);
+    momentumRoot.setProperty('--clienty',e.touches[0].clientY);
     momentumRoot.setProperty('--touches',e.targetTouches.length);
 }
 function momentumTouchEnd(e) {
@@ -161,54 +83,9 @@ function momentumTouchEnd(e) {
 }
 
 // Device orientation
-CSS.registerProperty({
-    name: '--orientAlpha',
-    syntax: '<angle>',
-    inherits: true,
-    initialValue: '0deg'
-});
-CSS.registerProperty({
-    name: '--orientBeta',
-    syntax: '<angle>',
-    inherits: true,
-    initialValue: '0deg'
-});
-CSS.registerProperty({
-    name: '--orientGamma',
-    syntax: '<angle>',
-    inherits: true,
-    initialValue: '0deg'
-});
 window.addEventListener('deviceorientation', momentumOrientation);
 function momentumOrientation(e) {
-    momentumRoot.setProperty('--orientalpha',e.alpha + 'deg');
-    momentumRoot.setProperty('--orientbeta',e.beta + 'deg');
-    momentumRoot.setProperty('--orientgamma',e.gamma + 'deg');
+    momentumRoot.setProperty('--orientalpha',e.alpha);
+    momentumRoot.setProperty('--orientbeta',e.beta);
+    momentumRoot.setProperty('--orientgamma',e.gamma);
 }
-
-// HELPER FUNCTIONS
-// https://gist.github.com/jakebellacera/9261266
-function cssTime(t) {
-    var num = parseFloat(t, 10),
-        unit = t.match(/m?s/),
-        milliseconds;
-  
-    if (unit) {
-      unit = unit[0];
-    }
-  
-    switch (unit) {
-      case "s": // seconds
-        milliseconds = num * 1000;
-        break;
-      case "ms": // milliseconds
-        milliseconds = num;
-        break;
-      default:
-        milliseconds = 0;
-        break;
-    }
-
-    return milliseconds;
-  }
-  

@@ -1,6 +1,8 @@
 body {
     min-height: 300vh;
-    --noiseinterval: 5s;
+    --loaded: 0;
+    transition: opacity 2s;
+    opacity: var(--loaded);
 }
 
 .test {
@@ -13,5 +15,18 @@ body {
     position: absolute;
 }
 .momentumcss {
-    transform: translatey(calc(var(--scrolly)*2 + 100px));
+    transform: translatey(calc(var(--scrolly)*1.5px + 50px));
+}
+
+.jitter {
+    transform: translateX(calc(var(--noise)*10px - 5px));
+    transition: transform 200ms linear;
+}
+.initter {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transform: translateY(calc(var(--noise)*10px - 5px));
+    transition: transform 200ms linear;
+    transition-delay: -150ms;
 }
