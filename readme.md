@@ -14,8 +14,7 @@ All values are unitless meaning you will need to add your units to them. For exa
 
 <table>
 <tr><th>Property<th>Description
-<tr><td><pre><code>--ready</code></pre><td>Returns as `1` when the DOM is ready.
-<tr><td><pre><code>--loaded</code></pre><td>Returns as `1` when the page is done loading.
+<tr><td><pre><code>--loaded</code></pre><td>`0` before the page is loaded, `1` when the page is done loading.
 <tr><td><pre><code>--viewportwidth</code></pre><td>The width of the viewport.
 <tr><td><pre><code>--viewportheight</code></pre><td>The height of the viewport.
 <tr><td><pre><code>--scrollx</code></pre><td>Distance scrolled on the X axis.
@@ -28,7 +27,7 @@ All values are unitless meaning you will need to add your units to them. For exa
 <tr><td><pre><code>--orientationbeta</code></pre><td>Gyroscopic orientation along the beta axis.
 <tr><td><pre><code>--orientationgamma</code></pre><td>Gyroscopic orientation along the gamma axis.
 <tr><td><pre><code>--random</code></pre><td>A random value between 0 and 1.
-<tr><td><pre><code>--noise</code></pre><td>A random value between 0 and 1 updated every 100ms.
+<tr><td><pre><code>--noise</code></pre><td>A random value between 0 and 1 updated every 100ms unless otherwise specified with <code>--noise-interval</code>.
 </table>
 
 ### Element variables
@@ -41,4 +40,5 @@ To trigger element variables, add the class `momentumcss` to your elemnt.
 <tr><td><pre><code>--height</code></pre><td>Height of the element
 <tr><td><pre><code>--top</code></pre><td>Element offsetTop value
 <tr><td><pre><code>--left</code></pre><td>Element offsetLeft value
+<tr><td><pre><code>--random</code></pre><td>A random value between 0 and 1.
 </table>
