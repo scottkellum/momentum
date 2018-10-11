@@ -23,9 +23,10 @@ All values are unitless meaning you will need to add your units to them. For exa
 <tr><td><pre><code>--clienty</code></pre><td>Pointer coordinates on the Y axis. This includes touch events.
 <tr><td><pre><code>--pointerdown</code></pre><td>Boolean value if the pointer is up or down. Use touchpoints below for touch events.
 <tr><td><pre><code>--touchpoints</code></pre><td>Number of touch points currently active.
-<tr><td><pre><code>--orientationalpha</code></pre><td>Gyroscopic orientation along the alpha axis.
-<tr><td><pre><code>--orientationbeta</code></pre><td>Gyroscopic orientation along the beta axis.
-<tr><td><pre><code>--orientationgamma</code></pre><td>Gyroscopic orientation along the gamma axis.
+<tr><td><pre><code>--orientationalpha</code></pre><td>Gyroscopic orientation along the alpha axis. Only avalible in some mobile browsers.
+<tr><td><pre><code>--orientationbeta</code></pre><td>Gyroscopic orientation along the beta axis. Only avalible in some mobile browsers.
+<tr><td><pre><code>--orientationgamma</code></pre><td>Gyroscopic orientation along the gamma axis. Only avalible in some mobile browsers.
+<tr><td><pre><code>--compassheading</code></pre><td>Compass heading. Only avalible in some mobile browsers.
 <tr><td><pre><code>--random</code></pre><td>A random value between 0 and 1.
 <tr><td><pre><code>--noise</code></pre><td>A random value between 0 and 1 updated every 100ms unless otherwise specified with <code>--noise-interval</code>.
 </table>
