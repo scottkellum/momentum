@@ -41,5 +41,5 @@ To trigger element variables, add the class `momentumcss` to your elemnt.
 <tr><td><pre><code>--height</code></pre><td>Height of the element
 <tr><td><pre><code>--top</code></pre><td>Element offsetTop value
 <tr><td><pre><code>--left</code></pre><td>Element offsetLeft value
-<tr><td><pre><code>--random</code></pre><td>A random value between 0 and 1.
+<tr><td><pre><code>--random</code></pre><td>A random value between <code>0</code> and <code>1</code>. This overrides the global value in the CSS cascade.
 </table>
