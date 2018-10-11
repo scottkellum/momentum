@@ -28,7 +28,7 @@ All values are unitless meaning you will need to add your units to them. For exa
 <tr><td><pre><code>--orientationgamma</code></pre><td>Gyroscopic orientation along the gamma axis. Only avalible in some mobile browsers.
 <tr><td><pre><code>--compassheading</code></pre><td>Compass heading. Only avalible in some mobile browsers.
 <tr><td><pre><code>--random</code></pre><td>A random value between <code>0</code> and <code>1</code>.
-<tr><td><pre><code>--noise</code></pre><td>A random value between <code>0</code> and <code>1</code> updated every <code>100ms</code> unless otherwise specified with <code>--noise-interval</code> on the <code><body></code> tag.
+<tr><td><pre><code>--noise</code></pre><td>A random value between <code>0</code> and <code>1</code> updated every <code>100ms</code> unless otherwise specified with <code>--noise-interval</code> on the <code>&lt;body&gt;</code> tag.
 </table>
 
 ### Element variables
