@@ -31,6 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
     momentumRoot.setProperty('--orientalpha','0');
     momentumRoot.setProperty('--orientbeta','0');
     momentumRoot.setProperty('--orientgamma','0');
+    momentumRoot.setProperty('--compassheading','0');
     momentumRoot.setProperty('--random',Math.random());
     momentumRoot.setProperty('--noise',Math.random());
 
@@ -79,6 +80,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
         momentumRoot.setProperty('--orientalpha',e.alpha);
         momentumRoot.setProperty('--orientbeta',e.beta);
         momentumRoot.setProperty('--orientgamma',e.gamma);
+        momentumRoot.setProperty('--compassheading',e.webkitCompassHeading);
     }
     momentumInit();
 }, false );
