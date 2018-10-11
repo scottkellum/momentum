@@ -14,7 +14,7 @@ All values are unitless meaning you will need to add your units to them. For exa
 
 <table>
 <tr><th>Property<th>Description
-<tr><td><pre><code>--loaded</code></pre><td>`0` before the page is loaded, `1` when the page is done loading.
+<tr><td><pre><code>--loaded</code></pre><td><code>0</code> before the page is loaded, <code>1</code> when the page is done loading.
 <tr><td><pre><code>--viewportwidth</code></pre><td>The width of the viewport.
 <tr><td><pre><code>--viewportheight</code></pre><td>The height of the viewport.
 <tr><td><pre><code>--scrollx</code></pre><td>Distance scrolled on the X axis.
@@ -27,8 +27,8 @@ All values are unitless meaning you will need to add your units to them. For exa
 <tr><td><pre><code>--orientationbeta</code></pre><td>Gyroscopic orientation along the beta axis. Only avalible in some mobile browsers.
 <tr><td><pre><code>--orientationgamma</code></pre><td>Gyroscopic orientation along the gamma axis. Only avalible in some mobile browsers.
 <tr><td><pre><code>--compassheading</code></pre><td>Compass heading. Only avalible in some mobile browsers.
-<tr><td><pre><code>--random</code></pre><td>A random value between 0 and 1.
-<tr><td><pre><code>--noise</code></pre><td>A random value between 0 and 1 updated every 100ms unless otherwise specified with <code>--noise-interval</code>.
+<tr><td><pre><code>--random</code></pre><td>A random value between <code>0</code> and <code>1</code>.
+<tr><td><pre><code>--noise</code></pre><td>A random value between <code>0</code> and <code>1</code> updated every <code>100ms</code> unless otherwise specified with <code>--noise-interval</code> on the <code><body></code> tag.
 </table>
 
 ### Element variables
