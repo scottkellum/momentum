@@ -1,32 +1,31 @@
 {
-  "name": "typeturajs",
+  "name": "momentum-css",
   "version": "1.0.0",
-  "description": "This is a tool to make fluidly responsive typography easy with support for font size, line height, and variable fonts.",
-  "main": "js/typetura.js",
+  "description": "Use JS events within your CSS",
+  "main": "js/momentum.js",
   "scripts": {
     "build": "node ./scripts/minify.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottkellum/typetura.js.git"
+    "url": "git+https://github.com/scottkellum/momentum.git"
   },
   "keywords": [
-    "typography",
-    "typetura",
-    "typeturajs",
-    "variable",
-    "fonts",
+    "movement",
+    "parallax",
+    "events",
+    "css",
+    "style",
     "lint",
     "height",
-    "font",
     "size"
   ],
   "author": "Scott Kellum",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/scottkellum/typetura.js/issues"
+    "url": "https://github.com/scottkellum/momentum/issues"
   },
-  "homepage": "https://github.com/scottkellum/typetura.js#readme",
+  "homepage": "https://github.com/scottkellum/momentum#readme",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.16.0",
