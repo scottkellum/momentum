@@ -1,6 +1,6 @@
 # Momentum
 
-Add page events like tracking scroll position, mouse position, device orientation, and more to your CSS!
+Add page events like tracking scroll position, mouse position, device orientation, and more to your CSS! [See an example of momentum in use](https://momentumcss.netlify.com/).
 
 ## Installation
 
