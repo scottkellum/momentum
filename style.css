@@ -1,6 +1,6 @@
 body {
+  --noise-interval: 10000;
   min-height: 300vh;
-  --loaded: 0;
   transition: opacity 2s;
   opacity: var(--loaded);
 }
@@ -12,6 +12,15 @@ body {
   border-radius: 50%;
   top: 0;
   left: 32px;
+  position: absolute;
+}
+
+.test2 {
+  top: 200px;
+  left: 400px;
+  width: 40px;
+  height: 30px;
+  background: blue;
   position: absolute;
 }
 .momentumcss {

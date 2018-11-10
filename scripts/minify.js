@@ -3,8 +3,8 @@ var compressor = require('node-minify');
 // With Promise
 var promise = compressor.minify({
   compressor: 'uglifyjs',
-  input: './js/typetura.js',
-  output: './js/typetura.min.js',
+  input: './js/momentum.js',
+  output: './js/momentum.min.js',
 });
 
 promise
