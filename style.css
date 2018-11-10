@@ -1,0 +1,32 @@
+body {
+  min-height: 300vh;
+  --loaded: 0;
+  transition: opacity 2s;
+  opacity: var(--loaded);
+}
+
+.test {
+  width: 100px;
+  height: 100px;
+  background: #555;
+  border-radius: 50%;
+  top: 0;
+  left: 32px;
+  position: absolute;
+}
+.momentumcss {
+  transform: translatey(calc(var(--scrolly)*1.5px + 50px));
+}
+
+.jitter {
+  transform: translateX(calc(var(--noise)*10px - 5px));
+  transition: transform 200ms linear;
+}
+.initter {
+  width: 100px;
+  height: 100px;
+  background: green;
+  transform: translateY(calc(var(--noise)*10px - 5px));
+  transition: transform 200ms linear;
+  transition-delay: -150ms;
+}
