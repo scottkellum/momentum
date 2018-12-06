@@ -4,7 +4,7 @@ Add page events like tracking scroll position, mouse position, device orientatio
 
 ## Installation
 
-Add [the js](https://github.com/scottkellum/momentum/blob/master/js/momentum.min.js) inside your `<head>` tag.
+Add [the js](https://raw.githubusercontent.com/scottkellum/momentum/master/js/momentum.min.js) inside your `<head>` tag.
 
 ## Usage
 
