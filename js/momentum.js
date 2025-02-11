@@ -94,9 +94,13 @@
 
         // Noise
         var i = window.getComputedStyle(document.body).getPropertyValue('--noise-interval');
-        window.setInterval(function(){
+        if (i != '0') {
+            window.setInterval(function(){
+                momentumRoot.setProperty('--noise',Math.random());
+            }, i || 100);
+        } else {
             momentumRoot.setProperty('--noise',Math.random());
-        }, i || 100);
+        }
     };
     window.addEventListener('resize',momentumInit);
 })();

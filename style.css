@@ -1,7 +1,7 @@
 body {
-  --noise-interval: 10000;
+  --noise-interval: 1000;
   min-height: 300vh;
-  transition: opacity 2s;
+  transition: opacity 1s;
   opacity: var(--loaded);
 }
 
@@ -29,7 +29,7 @@ body {
 
 .jitter {
   transform: translateX(calc(var(--noise)*10px - 5px));
-  transition: transform 200ms linear;
+  transition: transform 1000ms linear;
 }
 .initter {
   width: 100px;
