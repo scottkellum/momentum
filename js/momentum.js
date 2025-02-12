@@ -14,7 +14,6 @@
             e.style.setProperty('--height', e.offsetHeight);
             e.style.setProperty('--top', e.offsetTop);
             e.style.setProperty('--left', e.offsetLeft);
-            e.style.setProperty('--random', Math.random());
         }
     }
 
@@ -110,6 +109,10 @@
         });
 
         momentumInit();
+        for (var i = 0; i < momentumEls.length; i++) {
+            var e = momentumEls[i];
+            e.style.setProperty('--random', Math.random());
+        }
     }, false);
 
     // When the page has fully loaded
