@@ -37,21 +37,38 @@
         momentumRoot.setProperty('--random',Math.random());
         momentumRoot.setProperty('--noise',Math.random());
 
+
         // Scroll events
-        window.addEventListener('scroll',momentumScroll,false);
+        window.addEventListener('scroll', function() {
+            window.requestAnimationFrame(momentumScroll);
+        }, false);
+        
         function momentumScroll() {
             momentumRoot.setProperty('--scrollx',window.scrollX);
             momentumRoot.setProperty('--scrolly',window.scrollY);
         }
 
         // Pointer events
-        window.addEventListener('pointermove',momentumPointer,false);
+        window.addEventListener('pointermove', function(e) {
+            window.requestAnimationFrame(function() {
+                momentumPointer(e);
+            });
+        }, false);
         function momentumPointer(e) {
             momentumRoot.setProperty('--clientx',e.clientX);
             momentumRoot.setProperty('--clienty',e.clientY);
         }
-        window.addEventListener('pointerdown',momentumPointerDown,false);
-        window.addEventListener('pointerup',momentumPointerUp,false);
+        window.addEventListener('pointerdown', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumPointerDown(e);
+            });
+        }, false);
+        
+        window.addEventListener('pointerup', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumPointerUp(e);
+            });
+        }, false);
         function momentumPointerDown(e) {
             momentumRoot.setProperty('--pointerdown',1);
         }
@@ -59,13 +76,26 @@
             momentumRoot.setProperty('--pointerdown',0);
         }
         // Override pointer events if touch events
-        window.addEventListener('touchmove',momentumTouch,false);
+        window.addEventListener('touchmove', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumTouch(e);
+            });
+        }, false);
         function momentumTouch(e) {
             momentumRoot.setProperty('--clientx',e.touches[0].clientX);
             momentumRoot.setProperty('--clienty',e.touches[0].clientY);
         }
-        window.addEventListener('touchstart',momentumTouchStart,false);
-        window.addEventListener('touchend',momentumTouchEnd,false);
+        window.addEventListener('touchstart', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumTouchStart(e);
+            });
+        }, false);
+        
+        window.addEventListener('touchend', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumTouchEnd(e);
+            });
+        }, false);
         function momentumTouchStart(e) {
             momentumRoot.setProperty('--pointerdown',0);
             momentumRoot.setProperty('--clientx',e.touches[0].clientX);
@@ -77,7 +107,11 @@
         }
 
         // Device orientation
-        window.addEventListener('deviceorientation', momentumOrientation);
+        window.addEventListener('deviceorientation', function(e) {
+            window.requestAnimationFrame(function() {
+            momentumOrientation(e);
+            });
+        });
         function momentumOrientation(e) {
             momentumRoot.setProperty('--orientalpha',e.alpha);
             momentumRoot.setProperty('--orientbeta',e.beta);
